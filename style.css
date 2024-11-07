@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background: #000;
+    color: #ffffff;
+    height: 65px;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-family: "Space Grotesk", sans-serif;
+}
+nav ul{
+    list-style: none;
+}
+.gameContainer{
+    display: flex;
+    justify-content: center ;
+    margin-top: 5vh;
+
+}
+.container{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
+    font-family: "Roboto",sans-serif
+
+}
+.box{
+    border: 2px solid black;
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:hover{
+    background-color: rgba(137, 43, 226, 0.137);
+}
+.gameInfo{
+    padding: 0 34px;
+    font-family: "Baloo Bhai 2", sans-serif;
+}
+.gameInfo h1{
+    font-size: 2.5rem;
+}
+.imgbox img{
+    width: 0;
+    transition: width 1s is ease-in-out;
+}
+.br-0{
+    border-right: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+.bt-0{
+    border-top: 0;
+}
+.bb-0{
+    border-bottom: 0;
+}
+#reset{
+    margin: 0 23px;
+    padding: 7px 18px;
+    background-color: #f3e7f9;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bolder;
+}
+.info{
+    font-size: 25px;
+}
+
+/* Line style for the winning line */
+.winning-line {
+    position: absolute;
+    height: 0.5vh;
+    background-color: red;
+    width: 0;
+    transform-origin: center;
+    transition: width 0.5s ease;
+  }
+  
+  /* Horizontal, vertical, and diagonal positions */
+  .horizontal {
+    width: 100%;
+    height: 0.5vh;
+  }
+  
+  .vertical {
+    height: 100%;
+    width: 0.5vw;
+    transition: height 0.5s ease;
+  }
+  
+  .diagonal-left {
+    width: 100%;
+    transform: rotate(45deg);
+  }
+  
+  .diagonal-right {
+    width: 100%;
+    transform: rotate(-45deg);
+  }
+  
+
+/* Responsive section */
+@media screen and (max-width :950px){
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .gameInfo h1{
+        font-size: 1.5rem;
+    }
+    .container{
+        grid-template-columns: repeat(3,20vw);
+        grid-template-rows: repeat(3,20vw);
+    }
+    
+    
+}
